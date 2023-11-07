@@ -1,0 +1,33 @@
+<div class="login-container d-flex align-items-center justify-content-center">
+    <div class="card w-50">
+        <h2 class="text-center mt-2">Login</h2>
+        <hr />
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3 mx-5">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Please Enter your email." formControlName="email">
+                <p class="error-message" *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched">
+                    Email is required.
+                </p>
+            </div>
+
+            <div class="mb-3 mx-5">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Please enter your username" formControlName="username">
+                <p class="error-message" *ngIf="loginForm.get('username')?.hasError('required') && loginForm.get('username')?.touched">
+                    Username is required.
+                </p>
+            </div>
+
+            <div class="mb-3 mx-5">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
+            </div>
+
+            <div class="mb-3">
+                <button class="btn btn-info mx-5" [disabled]="!loginForm.valid">Login</button>
+                <button class="btn btn-secondary" routerLink="/register">Dont have an Account, Register</button>
+            </div>
+        </form>
+    </div>
+</div>

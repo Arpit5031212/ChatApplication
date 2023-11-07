@@ -1,0 +1,18 @@
+﻿** Highlights
+     Tables that will be recreated with data migrated
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Chats] (Table)
+       [dbo].[FK_SenderChats] (Foreign Key)
+       [dbo].[FK_RecieverChats] (Foreign Key)
+       [dbo].[FK_Replies] (Foreign Key)
+
+** Supporting actions

@@ -1,0 +1,49 @@
+<div class="chat-container">
+    <div class="row">
+        <div class="sidebar-container col-4 p-0">
+            <app-sidebar id="sidebar-component" [getMostRecentlyContactedUser]="MostRecentlyContactedUserId"
+                (UserSelected)="onUserSelect($event)"></app-sidebar>
+        </div>
+
+
+        <div id="messages-outer-div" class="col-8 p-0">
+
+            <div class="messages">
+
+                <div class="card my-2" [ngClass]="getClass(chat)" *ngFor="let chat of chatsBetweenUsers">
+                    <p id="image-container">
+                        <img class="profile-image" src=".\assets\profiledefault.png">
+                    </p>
+                    <p class="chat-text m-3">{{chat.chatContent}}</p>
+                    <p class="sent-time text-body-secondary mx-1 d-flex justify-content-between">
+                        {{chat.createdAt | date : 'short'}}
+                        <span id="chat-options-toggle" class="material-icons" (click)="toggleChatOptions(chat.id)">
+                            expand_more
+                        </span>
+                    </p>
+
+                    <div class="">
+                        <ul id="chat-options" *ngIf="showOptions(chat.id)">
+                            <li (click)="replyToChat(chat)">Reply</li>
+                            <li (click)="editChat(chat)" class="text-warning">Edit</li>
+                            <li (click)="deleteChat(chat.id)" class="text-danger">Delete</li>
+                        </ul>    
+                    </div>
+                    
+                </div>
+                
+
+
+            </div>
+
+            <div class="chat-box-outer-div d-flex justify-content-center" [class.d-none]="!show">
+                <div class="chat-box-container d-flex mb-2 align-items-center">
+                    <textarea id="chat-box" #message></textarea>
+                    <button class="d-flex justify-content-center align-items-center" (click)="sendMessage(message)">
+                        <span class="material-icons">send</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

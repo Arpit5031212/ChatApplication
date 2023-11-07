@@ -1,0 +1,3 @@
+# git ignore file
+ChatApp.Database/ChatApp.Database.dbmdl
+ChatApp.Database/ChatApp.Database.jfm

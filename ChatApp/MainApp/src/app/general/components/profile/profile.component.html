@@ -1,0 +1,99 @@
+<div class="register-container d-flex justify-content-center align-items-center">
+    <div class="card w-75 my-5">
+        <h2 class="text-center">Profile</h2>
+        <hr />
+
+        <!-- profile image -->
+        <div class="row justify-content-center align-items-center">
+            <div class="profile-img-container d-flex justify-content-center align-items-center">
+                <img id="image-preview" class="profile-image" [src]="profileImage" alt="user image">
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <app-file-upload class="image-upload" (imgPreviewSrc)="setPreviewSrc($event)"></app-file-upload>
+                <!-- <button type="button">Save</button> -->
+            </div>
+        </div>
+
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="mx-5">
+
+            <!-- Name Fields -->
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="firstName" formControlName="firstName">
+                    <p class="error-message" *ngIf="registerForm.get('firstName')?.hasError('required') && registerForm.get('firstName')?.touched">
+                        First Name is required.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" formControlName="lastName">
+                    <p class="error-message" *ngIf="registerForm.get('lastName')?.hasError('required') && registerForm.get('lastName')?.touched">
+                        Last Name is required.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Contact info(Email & phone) -->
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="Email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="Email" formControlName="email">
+                    <p class="error-message" *ngIf="registerForm.get('email')?.hasError('required') && registerForm.get('email')?.touched">
+                        email is required.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" id="phone" formControlName="phoneNumber">
+                    <p class="error-message" *ngIf="registerForm.get('phoneNumber')?.hasError('required') && registerForm.get('phoneNumber')?.touched">
+                        Phone Number is required.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Username & Password -->
+            <div class="row">
+                <div class="col">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" formControlName="username">
+                    <p class="error-message" *ngIf="registerForm.get('username')?.hasError('required') && registerForm.get('username')?.touched">
+                        Username is required.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" formControlName="password">
+                    <p class="error-message" *ngIf="registerForm.get('password')?.hasError('required') && registerForm.get('password')?.touched">
+                        password is required.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Gender and DOB -->
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="gender" class="form-label">Gender</label>
+                    <br />
+                    <select name="gender" id="gender" formControlName="gender">
+                        <option value="Default" selected>Please Select your gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="dateOfBirth" class="form-label">DOB</label>
+                    <input type="date" class="form-control" id="dateOfBirth" formControlName="dateOfBirth">
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <button type="submit" class="btn btn-primary m-4 col-md-3">Update Profile</button>
+                <button type="button" class="btn btn-warning m-4 col-md-3" (click)="onCancel()">Cancel</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>

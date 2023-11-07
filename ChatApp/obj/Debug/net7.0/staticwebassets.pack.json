@@ -1,0 +1,73 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Projects\\ChatAppProject\\ChatApp\\wwwroot\\Images\\Users\\149d1f90-a7d2-4027-bfe5-a46ce91785bc.png",
+      "PackagePath": "staticwebassets\\Images\\Users\\149d1f90-a7d2-4027-bfe5-a46ce91785bc.png"
+    },
+    {
+      "Id": "D:\\Projects\\ChatAppProject\\ChatApp\\wwwroot\\Images\\Users\\1eab079b-1659-49be-9b5c-63a19566a1fc.png",
+      "PackagePath": "staticwebassets\\Images\\Users\\1eab079b-1659-49be-9b5c-63a19566a1fc.png"
+    },
+    {
+      "Id": "D:\\Projects\\ChatAppProject\\ChatApp\\wwwroot\\Images\\Users\\1fc8202b-6009-4d61-8ceb-e9766191b874.png",
+      "PackagePath": "staticwebassets\\Images\\Users\\1fc8202b-6009-4d61-8ceb-e9766191b874.png"
+    },
+    {
+      "Id": "D:\\Projects\\ChatAppProject\\ChatApp\\wwwroot\\Images\\Users\\2516b714-7ef2-4499-a22c-24d94c11e258.jpg",
+      "PackagePath": "staticwebassets\\Images\\Users\\2516b714-7ef2-4499-a22c-24d94c11e258.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\ChatAppProject\\ChatApp\\wwwroot\\Images\\Users\\361f78d9-7603-4f21-8767-f74b2e0c9ad0.png",
+      "PackagePath": "staticwebassets\\Images\\Users\\361f78d9-7603-4f21-8767-f74b2e0c9ad0.png"
+    },
+    {
+      "Id": "D:\\Projects\\ChatAppProject\\ChatApp\\wwwroot\\Images\\Users\\48002902-6732-4927-a7a2-8206e8e0eb1a.png",
+      "PackagePath": "staticwebassets\\Images\\Users\\48002902-6732-4927-a7a2-8206e8e0eb1a.png"
+    },
+    {
+      "Id": "D:\\Projects\\ChatAppProject\\ChatApp\\wwwroot\\Images\\Users\\49216ccb-c6f0-4599-b2e9-6ae81c80c361.png",
+      "PackagePath": "staticwebassets\\Images\\Users\\49216ccb-c6f0-4599-b2e9-6ae81c80c361.png"
+    },
+    {
+      "Id": "D:\\Projects\\ChatAppProject\\ChatApp\\wwwroot\\Images\\Users\\a07c506d-0c99-4f70-af94-e46256378f6a.png",
+      "PackagePath": "staticwebassets\\Images\\Users\\a07c506d-0c99-4f70-af94-e46256378f6a.png"
+    },
+    {
+      "Id": "D:\\Projects\\ChatAppProject\\ChatApp\\wwwroot\\Images\\Users\\ccaae669-4ca4-4f55-9700-260de1fb274e.jpg",
+      "PackagePath": "staticwebassets\\Images\\Users\\ccaae669-4ca4-4f55-9700-260de1fb274e.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\ChatAppProject\\ChatApp\\wwwroot\\Images\\Users\\default.png",
+      "PackagePath": "staticwebassets\\Images\\Users\\default.png"
+    },
+    {
+      "Id": "D:\\Projects\\ChatAppProject\\ChatApp\\wwwroot\\Images\\Users\\fc0549e6-4fb5-4334-938a-9773bd91f6c1.jpg",
+      "PackagePath": "staticwebassets\\Images\\Users\\fc0549e6-4fb5-4334-938a-9773bd91f6c1.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\ChatAppProject\\ChatApp\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",
+      "PackagePath": "staticwebassets\\js\\signalr\\dist\\browser\\signalr.js"
+    },
+    {
+      "Id": "D:\\Projects\\ChatAppProject\\ChatApp\\wwwroot\\js\\signalr\\dist\\browser\\signalr.min.js",
+      "PackagePath": "staticwebassets\\js\\signalr\\dist\\browser\\signalr.min.js"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.ChatApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.ChatApp.props",
+      "PackagePath": "build\\ChatApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.ChatApp.props",
+      "PackagePath": "buildMultiTargeting\\ChatApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.ChatApp.props",
+      "PackagePath": "buildTransitive\\ChatApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

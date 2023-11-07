@@ -1,0 +1,20 @@
+﻿** Highlights
+     Tables that will be recreated with data migrated
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[Chats].[UpdatedBy] is being dropped, data loss could occur.
+
+** User actions
+     Drop
+       [dbo].[FK_UpdatedBy] (Foreign Key)
+     Alter
+       [dbo].[Chats] (Table)
+
+** Supporting actions
+
+The column [dbo].[Chats].[UpdatedBy] is being dropped, data loss could occur.
+

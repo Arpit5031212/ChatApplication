@@ -1,0 +1,25 @@
+﻿** Highlights
+     Tables that will be recreated with data migrated
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[UserProfiles].[ConnectionId] is being dropped, data loss could occur.
+
+** User actions
+     Alter
+       [dbo].[UserProfiles] (Table)
+     Create
+       [dbo].[UserConnections] (Table)
+       [dbo].[FK_UserConnections_Users] (Foreign Key)
+
+** Supporting actions
+     Refresh
+       [dbo].[spGetAllRecentChatsOfUser] (Procedure)
+       [dbo].[spGetUserById] (Procedure)
+       [dbo].[spSearchUsers] (Procedure)
+
+The column [dbo].[UserProfiles].[ConnectionId] is being dropped, data loss could occur.
+

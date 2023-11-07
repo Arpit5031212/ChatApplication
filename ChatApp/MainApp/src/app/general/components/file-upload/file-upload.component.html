@@ -1,0 +1,13 @@
+<input type="file" class="file-input" accept="image/*" (change)="onFileSelected($event)" #fileUpload>
+
+<div class="file-upload px-2 mb-2">
+
+  {{fileName || "Upload Profile Image"}}
+
+  <button class="btn btn-secondary upload-btn mt-2" (click)="fileUpload.click()">
+    <span class="material-icons">attach_file</span>
+  </button>
+  <button class="btn btn-secondary upload-btn mt-2" (click)="onConfirmUpload()">
+    <span class="material-icons">file_upload</span>
+  </button>
+</div>

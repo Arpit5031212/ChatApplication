@@ -1,0 +1,29 @@
+.search-bar {
+    margin-right: 100px;
+    width: 400px;
+}
+
+a {
+    cursor: pointer;
+}
+
+.user-search {
+    position: relative;
+}
+
+
+#dropdown-container {
+
+    display: none;
+
+    .dropdown-results {
+        z-index: 1;
+        background-color: #f6f6f6;
+        min-width: 400px;
+        position: absolute;
+        list-style: none;
+        li {
+            cursor: pointer;
+        }
+    }
+}

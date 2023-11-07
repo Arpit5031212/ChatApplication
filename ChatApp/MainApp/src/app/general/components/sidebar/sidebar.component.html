@@ -1,0 +1,12 @@
+<div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white sidebar">
+  <div class="list-group list-group-flush border-bottom scrollarea overflow-auto">
+    <a class="list-group-item list-group-item-action py-3 lh-tight contacts" [class.active]="isSelected(chat)" [class.active]="" aria-current="true" *ngFor="let chat of recentChats, index as i"
+      (click)="setIds(chat.recieverId, chat.senderId)">
+      <div class="d-flex w-100 align-items-center justify-content-between">
+        <strong class="mb-1">{{chat.username}}</strong>
+        <small>{{chat.createdAt | date: 'short'}}</small>
+      </div>
+      <div class="col-10 mb-1 small">{{chat.chatContent}}</div>
+    </a>
+  </div>
+</div>

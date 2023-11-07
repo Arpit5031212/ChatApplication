@@ -1,0 +1,13 @@
+#gender {
+    border: var(--bs-border-width) solid #333;
+    height: 40px;
+    width: 100%;
+}
+
+.register-container {
+    margin-top: 2%;
+}
+
+input.ng-invalid.ng-touched {
+    border: 2px solid red;
+}
