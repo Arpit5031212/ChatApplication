@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 import { Chats, RecentChats, SendChat } from '../shared/models';
 import { SignalrServiceService } from '../shared/SignalrService/signalr-service.service';
@@ -26,10 +26,10 @@ export class ChatService {
   // }
 
   sendMessage(messageObj: SendChat) {
-    this.signalrSevice.hubConnection.invoke<SendChat>("SendChat", messageObj);
+    this.signalrSevice.hubConnection.invoke<any>("SendChat", messageObj);
   }
 
-  deleteChat(chatId: number) {
-    
+  deleteChat(chatId: number) : Observable<any> {
+    return this.http.delete<any>(`${environment.apiBaseUrl}/Chat/Delete?chatId=${chatId}&userId=${Number(localStorage.getItem(environment.userId))}`)
   }
 }

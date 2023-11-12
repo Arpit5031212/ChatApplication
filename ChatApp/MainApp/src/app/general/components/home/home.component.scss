@@ -83,6 +83,13 @@ a {
     }
 }
 
+#chat-being-replied {
+    z-index: 2;
+    position: absolute;
+    height: 50px;
+    width: max-content;
+    bottom: 50px;
+}
 
 .chat-box-outer-div {
 

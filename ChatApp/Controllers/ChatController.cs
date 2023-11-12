@@ -27,6 +27,19 @@ namespace ChatApp.Controllers
             return Ok(newChat);
         }
 
+        [HttpDelete("Delete")]
+        public async Task<IActionResult> DeleteChat(int chatId, int userId)
+        {
+            if(await chatService.DeleteChat(chatId, userId))
+            {
+                return Ok(true);
+            }
+            return BadRequest(false);
+            
+        }
+
+
+
         [HttpPost("reply")]
         public async Task<IActionResult> ReplyToChat(ChatViewModel reply)
         {

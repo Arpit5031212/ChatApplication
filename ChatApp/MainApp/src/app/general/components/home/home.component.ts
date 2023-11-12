@@ -21,6 +21,9 @@ export class HomeComponent implements OnInit {
   loggedInUser: number = Number(localStorage.getItem(environment.userId));
   theOtherUser: number = 0;
 
+  repliedTo: number = 0;
+  messageBeingReplied: string = "";
+
   MostRecentlyContactedUserId!: number;
 
   users = {
@@ -34,7 +37,7 @@ export class HomeComponent implements OnInit {
 
   toggleChatOptions(chatId: number) {
     this.showChatOptions = !this.showChatOptions;
-    this.chatSelected = chatId; 
+    this.chatSelected = chatId;
   }
 
   showOptions(chatId: number) {
@@ -93,8 +96,23 @@ export class HomeComponent implements OnInit {
         senderId: this.loggedInUser,
         recieverId: this.theOtherUser,
         chatType: 0,
-        chatContent: message.value
+        chatContent: message.value,
+        repliedTo: 0
       }
+
+      if(this.repliedTo !== 0) {
+        messageObj.repliedTo = this.repliedTo;
+      }
+
+      this.chatService.sendMessage(messageObj);
+      
+      const chatBeingReplied = document.getElementById("chat-being-replied");
+      if (chatBeingReplied != null) {
+        chatBeingReplied.innerText = "";
+      }
+      message.value = "";
+      this.repliedTo = 0;
+
 
       // this.chatService.sendMessage(messageObj).subscribe({
       //   next: (res: Chats) => {
@@ -107,8 +125,7 @@ export class HomeComponent implements OnInit {
       //   }
       // })
 
-      this.chatService.sendMessage(messageObj);
-      message.value = "";
+      
     }
   }
 
@@ -117,11 +134,25 @@ export class HomeComponent implements OnInit {
   }
 
   deleteChat(chatId: number) {
-    
+    this.chatService.deleteChat(chatId).subscribe({
+      next: (res: any) => {
+        if (res) {
+          const remainingChats = this.chatsBetweenUsers.filter(c => c.id != chatId);
+          this.chatsBetweenUsers = remainingChats;
+        }
+      }
+    })
   }
 
   replyToChat(chat: Chats) {
-
+    const chatBox = document.getElementById("chat-box");
+    const chatBeingReplied = document.getElementById("chat-being-replied");
+    if (chatBeingReplied != null) {
+      this.repliedTo = chat.repliedTo;
+      chatBeingReplied.innerText = chat.chatContent;
+      this.messageBeingReplied = chat.chatContent;
+    }
+    chatBox?.focus();
   }
 
   onUserSelect(event: { userId1: number; userId2: number; }) {

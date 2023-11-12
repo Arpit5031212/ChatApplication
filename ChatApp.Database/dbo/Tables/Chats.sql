@@ -8,6 +8,8 @@
 	[RepliedTo] int NULL,
 	[CreatedAt] DateTime2(7) NOT NULL,
 	[UpdatedAt] DateTime2(7) NOT NULL,
+	[IsDeletedBySender] bit NOT NULL Default 0,
+	[IsDeletedByReciever] bit NOT NULL Default 0
 
 	CONSTRAINT FK_SenderChats FOREIGN KEY (SenderId) REFERENCES [dbo].[UserProfiles](Id),
 	CONSTRAINT FK_RecieverChats FOREIGN KEY (RecieverId) REFERENCES [dbo].[UserProfiles](Id),

@@ -12,6 +12,6 @@ namespace ChatApp.Business.ServiceInterfaces
         Task<Chat> SendChat(ChatViewModel chat);
         Task<Chat> ReplyToChat(ChatViewModel chat);
         Task<Chat> EditChat(int id, ChatViewModel chat);
-        Task<Chat> DeleteChat(int id);
+        Task<Boolean> DeleteChat(int chatId, int userId);
     }
 }

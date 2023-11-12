@@ -16,19 +16,27 @@ namespace ChatApp.Infrastructure
         {
             context = _context;
         }
-        public async Task<Chat> DeleteChat(int id)
+        public async Task<Boolean> DeleteChat(int chatId, int userId)
         {
-            if (id != 0)
+            if (chatId != 0 && userId != 0)
             {
-                var chat = await context.Chats.FindAsync(id);
+                var chat = await context.Chats.FindAsync(chatId);
                 if (chat != null)
                 {
-                    context.Chats.Remove(chat);
+                    if(userId == chat.SenderId)
+                    {
+                        chat.IsDeletedBySender = true;
+                    }
+                    else
+                    {
+                        chat.IsDeletedByReciever = false;
+                    }
+                    context.Chats.Update(chat);
                     await context.SaveChangesAsync();
+                    return true;
                 }
             }
-
-            return null;
+            return false;
         }
 
         public async Task<Chat> EditChat(int id, ChatViewModel chat)
@@ -41,8 +49,8 @@ namespace ChatApp.Infrastructure
                 chatToBeEdited.ChatType = chat.ChatType;
 
                 context.Chats.Update(chatToBeEdited);
+                await context.SaveChangesAsync();
             }
-            await context.SaveChangesAsync();
             return chatToBeEdited;
         }
 

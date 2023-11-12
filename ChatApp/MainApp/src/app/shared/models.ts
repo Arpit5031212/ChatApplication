@@ -53,7 +53,9 @@ export interface Chats {
     senderProfile: object | null,
     recieverId: number,
     recieverProfile: object | null,
-    repliedTo: number
+    repliedTo: number,
+    chatDeletedBySender: number,
+    chatDeletedByReciever: number
 }
 
 export interface SendChat {

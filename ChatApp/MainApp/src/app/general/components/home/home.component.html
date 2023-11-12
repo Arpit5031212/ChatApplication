@@ -7,10 +7,9 @@
 
 
         <div id="messages-outer-div" class="col-8 p-0">
-
             <div class="messages">
-
                 <div class="card my-2" [ngClass]="getClass(chat)" *ngFor="let chat of chatsBetweenUsers">
+                    <div class="card-header" *ngIf="repliedTo">repliedTo</div>
                     <p id="image-container">
                         <img class="profile-image" src=".\assets\profiledefault.png">
                     </p>
@@ -21,20 +20,17 @@
                             expand_more
                         </span>
                     </p>
-
                     <div class="">
                         <ul id="chat-options" *ngIf="showOptions(chat.id)">
                             <li (click)="replyToChat(chat)">Reply</li>
                             <li (click)="editChat(chat)" class="text-warning">Edit</li>
                             <li (click)="deleteChat(chat.id)" class="text-danger">Delete</li>
                         </ul>    
-                    </div>
-                    
+                    </div>   
                 </div>
-                
-
-
             </div>
+
+            <p id="chat-being-replied"></p>
 
             <div class="chat-box-outer-div d-flex justify-content-center" [class.d-none]="!show">
                 <div class="chat-box-container d-flex mb-2 align-items-center">

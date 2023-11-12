@@ -18,6 +18,8 @@ namespace ChatApp.Context.EntityClasses
         
         [Required, DataType(DataType.DateTime)]
         public DateTime UpdatedAt { get; set; }
+        public Boolean IsDeletedBySender { get; set; }
+        public Boolean IsDeletedByReciever { get; set; }
 
         // Relationships
 
